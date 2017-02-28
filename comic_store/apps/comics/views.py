@@ -3,12 +3,11 @@ from models import *
 from django.contrib import messages
 
 def index(request):
-<<<<<<< HEAD
+
     ##################################################################
     # commented so it doesnt keep making new prods for every refresh #
     ##################################################################
-=======
->>>>>>> 1e117919adb10727f0b7aae38e47f6a99ea45f57
+
     # Product.objects.create(
     # name        =   "Superman",
     # description =   "Some dork in a cape",
