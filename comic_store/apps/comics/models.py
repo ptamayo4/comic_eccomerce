@@ -19,13 +19,23 @@ class UserManager(models.Manager):
             error_msgs.append("Invalid Login")
             return {"errors":error_msgs}
 
+    def user_login(self, post_data):
+        error_msgs = []
+        if User.userManager.get(email=post_data['email']):
+            stored_pw = User.userManager.get(email=post_data['email']).password
+            if stored_pw == post_data['password']:
+                return {"theuser": User.userManager.get(email=post_data['email'])}
+            else:
+                error_msgs.append("Invalid Login")
+                return {"errors":error_msgs}
+        else:
+            error_msgs.append("Invalid Login")
+            return {"errors":error_msgs}
 #class OrderManager(models.Manager):
 #    def create_order(self, post_data, user_id):
 #        the_user = User.objects.get(id=user_id)
 #
 #    def add_to_order(self, post_data, user_id):
-
-
 
 class User(models.Model):
     email       =   models.CharField(max_length=100, default=None)

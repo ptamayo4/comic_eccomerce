@@ -18,10 +18,18 @@ li{
 #logoff{
     margin-left: 1000px;
 }
-a{
+#header_link{
     text-decoration: none;
     color: white;
 }
 a:visited{
     color: white;
+}
+#products_table{
+    width: 1200px;
+    text-align: left;
+    margin-left: 20px;
+}
+#products_table th{
+    margin-left: 20px;
 }

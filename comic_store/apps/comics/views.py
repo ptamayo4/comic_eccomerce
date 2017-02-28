@@ -3,14 +3,14 @@ from models import *
 from django.contrib import messages
 
 def index(request):
-    Product.objects.create(
-    name        =   "Superman",
-    description =   "Some dork in a cape",
-    image       =   "guardians1.jpg",
-    price       =   6.20,
-    category    =   "Superhero",
-    quantity    =   42
-    )
+    # Product.objects.create(
+    # name        =   "Superman",
+    # description =   "Some dork in a cape",
+    # image       =   "guardians1.jpg",
+    # price       =   6.20,
+    # category    =   "Superhero",
+    # quantity    =   42
+    # )
     context = {
     "products":Product.objects.all()
     }
@@ -52,7 +52,10 @@ def register(request):
     return redirect('/admin')
 
 def product_view(request):
-    return render(request, 'comics/admin_products.html')
+    context = {
+    "products":Product.objects.all()
+    }
+    return render(request, 'comics/admin_products.html', context)
 
 def orders_view(request):
     return render(request, 'comics/admin_orders.html')
