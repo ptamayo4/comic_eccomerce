@@ -31,11 +31,15 @@ class UserManager(models.Manager):
         else:
             error_msgs.append("Invalid Login")
             return {"errors":error_msgs}
-
+#class OrderManager(models.Manager):
+#    def create_order(self, post_data, user_id):
+#        the_user = User.objects.get(id=user_id)
+#
+#    def add_to_order(self, post_data, user_id):
 
 class User(models.Model):
-    email       =   models.CharField(max_length=100)
-    password    =   models.CharField(max_length=100)
+    email       =   models.CharField(max_length=100, default=None)
+    password    =   models.CharField(max_length=100, default=None)
     first_name  =   models.CharField(max_length=60)
     last_name   =   models.CharField(max_length=60)
     admin_auth  =   models.BooleanField(default=False)
@@ -53,18 +57,27 @@ class Product(models.Model):
     description =   models.TextField(max_length=1000)
     image       =   models.CharField(max_length=100)
     price       =   models.DecimalField(max_digits=5,decimal_places=2)
-    category    =   models.CharField(max_length=60)
+    #category    =   models.CharField(max_length=60)
     quantity    =   models.IntegerField(default=0)
     created_at  =   models.DateTimeField(auto_now_add=True)
     updated_at  =   models.DateTimeField(auto_now=True)
 
+class Category(models.Model):
+    name        =   models.CharField(max_length=60)
+    created_at  =   models.DateTimeField(auto_now_add=True)
+    updated_at  =   models.DateTimeField(auto_now=True)
+    products    =   models.ManyToManyField(Product, related_name='product_categories')
+
 class Order(models.Model):
-    product     =   models.ManyToManyField(Product, related_name="product_orders")
+    products    =   models.ManyToManyField(Product, related_name="product_orders")
     user        =   models.ForeignKey(User, related_name="user_orders")
+    # shipping address
     addr_street =   models.CharField(max_length=100)
     street_two  =   models.CharField(max_length=100)
     addr_city   =   models.CharField(max_length=100)
     addr_state  =   models.CharField(max_length=20)
+    ####
     total       =   models.DecimalField(max_digits=5,decimal_places=2)
+    status      =   models.IntegerField(default=0)
     created_at  =   models.DateTimeField(auto_now_add=True)
     updated_at  =   models.DateTimeField(auto_now=True)
