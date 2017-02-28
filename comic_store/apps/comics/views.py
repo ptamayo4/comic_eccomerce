@@ -3,6 +3,11 @@ from models import *
 from django.contrib import messages
 
 def index(request):
+
+    ##################################################################
+    # commented so it doesnt keep making new prods for every refresh #
+    ##################################################################
+
     # Product.objects.create(
     # name        =   "Superman",
     # description =   "Some dork in a cape",
@@ -52,13 +57,19 @@ def register(request):
     return redirect('/admin')
 
 def product_view(request):
-    return render(request, 'comics/admin_products.html')
+    context = {
+    "products":Product.objects.all()
+    }
+    return render(request, 'comics/admin_products.html', context)
 
 def orders_view(request):
     return render(request, 'comics/admin_orders.html')
 
 def products_main(request):
-    return render(request, 'comics/products_main.html')
+    context = {
+        'products' : Product.objects.all()
+    }
+    return render(request, 'comics/products_main.html', context)
 
 def product_spotlight(request):
     return render(request, 'comics/product_spotlight.html')

@@ -4,11 +4,13 @@
         <meta charset="utf-8">
         <title></title>
         {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{%static 'comics/css/style.css'%}">
     </head>
     <body>
-        <img src="{% static 'images/guardians1.jpg'%}">
+      {%include 'includes/nav.html'%}
+        <!-- <img src="{% static 'images/guardians1.jpg'%}">
         {% for product in products %}
             <p>{{product.name}}</p>
-        {% endfor %}
+        {% endfor %} -->
     </body>
 </html>

@@ -11,6 +11,23 @@
     background-position: top;
     background-attachment: fixed;
 }
+/*============*/
+/* NAV STYLE */
+/*============*/
+#nav{
+  background:black;
+}
+#nav > h1{
+  color:white;
+  display:inline-block;
+  margin:10px 0;
+  font-size:30px;
+}
+#nav > a{
+  float:right;
+  color:white;
+  margin:15px 0;
+}
 /****************************/
 /*Products Main Page CSS*/
 /****************************/
@@ -20,7 +37,7 @@
   height: 300px;
   margin: 30px 0px 7px 30px;
   padding: 10px 0px 0px 10px;
-  box-shadow: 10px 10px 5px #888888;
+  /*box-shadow: 10px 10px 5px #888888;*/
   font-weight: bold;
 }
 
@@ -31,8 +48,9 @@
   height: auto;
   margin: 30px 0px 7px 10px;
   padding: 10px 10px 10px 10px;
-  box-shadow: 10px 10px 5px #888888;
+  /*box-shadow: 10px 10px 5px #888888;*/
   font-weight: bold;
+  border-left: 2px solid white;
 }
 
 .products_gallery_navigation_links{
@@ -56,7 +74,7 @@
   height: auto;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  box-shadow: 10px 10px 5px #888888;
+  /*box-shadow: 10px 10px 5px #888888;*/
   font-weight: bold;
   font-size: 14px;
 }
