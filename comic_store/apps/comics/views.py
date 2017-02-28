@@ -3,14 +3,17 @@ from models import *
 from django.contrib import messages
 
 def index(request):
-    Product.objects.create(
-    name        =   "Superman",
-    description =   "Some dork in a cape",
-    image       =   "guardians1.jpg",
-    price       =   6.20,
-    category    =   "Superhero",
-    quantity    =   42
-    )
+    ##################################################################
+    # commented so it doesnt keep making new prods for every refresh #
+    ##################################################################
+    # Product.objects.create(
+    # name        =   "Superman",
+    # description =   "Some dork in a cape",
+    # image       =   "guardians1.jpg",
+    # price       =   6.20,
+    # category    =   "Superhero",
+    # quantity    =   42
+    # )
     context = {
     "products":Product.objects.all()
     }
