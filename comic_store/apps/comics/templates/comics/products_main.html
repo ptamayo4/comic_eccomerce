@@ -5,6 +5,19 @@
     <title>Products Main Page</title>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'comics/css/style.css' %}"media="screen" title="no title"  charset="utf-8">
+    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#temp_logo").click(function(){
+          $("#temp_logo").fadeOut("slow");
+          $("#temp_door_1_1").slide("fast");
+          $("#temp_door_1_2").slide("fast");
+          $("#temp_door_2_1").slide("fast");
+          $("#temp_door_2_2").slide("fast");
+          $("#temp_door_2_3").slide("fast");
+        });
+      });
+    </script>
   </head>
   <body>
     <div id="products_console_1">
@@ -57,6 +70,18 @@
         </a>
         {% endfor %}
       </div> -->
+    </div>
+    <div id="store_entry">
+      <img id="temp_logo" src="{% static 'comics/images/logo_stuff/temp_title_image_web.png' %}" alt="Store Temp Logo">
+      <div id="door_entry_1">
+        <img id="temp_door_1_1" src="{% static 'comics/images/doors/Project_landing_page_door1_1_web.png' %}" alt="Store Temp Door 1 prt 1">
+        <img id="temp_door_1_2" src="{% static 'comics/images/doors/Project_landing_page_door1_2_web.png' %}" alt="Store Temp Door 1 prt 2">
+      </div>
+      <div id="door_entry_2">
+        <img id="temp_door_2_1" src="{% static 'comics/images/doors/Project_landing_page_door2_1_web.png' %}" alt="Store Temp Door 2 prt 1">
+        <img id="temp_door_2_2" src="{% static 'comics/images/doors/Project_landing_page_door2_2_web.png' %}" alt="Store Temp Door 2 prt 2">
+        <img id="temp_door_2_3" src="{% static 'comics/images/doors/Project_landing_page_door2_3_web.png' %}" alt="Store Temp Door 2 prt 3">
+      </div>
     </div>
   </body>
 </html>

@@ -38,7 +38,7 @@
 
 #product_gallery{
   margin: 10px 0px 0px 0px;
-  padding-left: 5px 0px 0px 0px;
+  padding-left: 0px 0px 0px 0px;
 }
 .product_gallery_item{
   display: inline-block;
@@ -61,6 +61,59 @@
   position: relative;
   top: 95px;
   left: 38px;
+}
+
+#temp_logo{
+  position: relative;
+  bottom: 912.5px;
+  width: 1393px;
+  height: auto;
+  z-index: 1;
+}
+
+#temp_door_1_1{
+  position: relative;
+  width: 1393px;
+  height: auto;
+}
+
+#temp_door_1_2{
+  position: relative;
+  bottom: 912.5px;
+  vertical-align: top;
+  width: 1393px;
+  height: auto;
+}
+
+#door_entry_1{
+  position: relative;
+  bottom: 1825.5px;
+}
+
+#door_entry_2{
+  position: relative;
+  bottom: 3650.5px;
+
+}
+
+#temp_door_2_1{
+  position: relative;
+  width: 1393px;
+  height: auto;
+}
+
+#temp_door_2_2{
+  position: relative;
+  bottom: 912.5px;
+  width: 1393px;
+  height: auto;
+}
+#temp_door_2_3{
+  position: relative;
+  bottom: 1825px;
+  vertical-align: top;
+  width: 1393px;
+  height: auto;
 }
 
 /****************************/
