@@ -2,6 +2,23 @@
   outline: 1px dotted red;
   font-family: sans-serif;
 }
+/*============*/
+/* NAV STYLE */
+/*============*/
+#nav{
+  background:black;
+}
+#nav > h1{
+  color:white;
+  display:inline-block;
+  margin:10px 0;
+  font-size:30px;
+}
+#nav > a{
+  float:right;
+  color:white;
+  margin:15px 0;
+}
 /****************************/
 /*Products Main Page CSS*/
 /****************************/
