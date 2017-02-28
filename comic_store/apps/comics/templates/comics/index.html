@@ -3,8 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        {% load staticfiles %}
     </head>
     <body>
-        This is a test
+        <img src="{% static 'images/guardians1.jpg'%}">
+        {% for product in products %}
+            <p>{{product.name}}</p>
+        {% endfor %}
     </body>
 </html>
