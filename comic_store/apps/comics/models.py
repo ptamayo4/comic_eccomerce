@@ -19,6 +19,18 @@ class UserManager(models.Manager):
             error_msgs.append("Invalid Login")
             return {"errors":error_msgs}
 
+    def user_login(self, post_data):
+        error_msgs = []
+        if User.userManager.get(email=post_data['email']):
+            stored_pw = User.userManager.get(email=post_data['email']).password
+            if stored_pw == post_data['password']:
+                return {"theuser": User.userManager.get(email=post_data['email'])}
+            else:
+                error_msgs.append("Invalid Login")
+                return {"errors":error_msgs}
+        else:
+            error_msgs.append("Invalid Login")
+            return {"errors":error_msgs}
 
 
 class User(models.Model):
