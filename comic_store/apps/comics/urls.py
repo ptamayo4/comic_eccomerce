@@ -9,6 +9,6 @@ urlpatterns = [
     url(r'^dashboard/products$', views.product_view),
     url(r'^dashboard/orders$', views.orders_view),
     url(r'^products_main$', views.products_main),
-    url(r'^product_spotlight$', views.product_spotlight),
+    url(r'^product_spotlight/(?P<product_id>\d+)$', views.product_spotlight),
     url(r'^shopping_cart$', views.shopping_cart),
 ]
