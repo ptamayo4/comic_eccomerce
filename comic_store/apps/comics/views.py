@@ -61,7 +61,10 @@ def orders_view(request):
     return render(request, 'comics/admin_orders.html')
 
 def products_main(request):
-    return render(request, 'comics/products_main.html')
+    context = {
+        'products' : Product.objects.all()
+    }
+    return render(request, 'comics/products_main.html', context)
 
 def product_spotlight(request):
     return render(request, 'comics/product_spotlight.html')
