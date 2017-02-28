@@ -1,0 +1,27 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+ul{
+    background-color: green;
+    height: 50px;
+}
+li{
+    display: inline-block;
+    font-size: 30px;
+    color: white;
+    margin-left:100px;
+    line-height: 50px;
+    list-style: none;
+}
+#logoff{
+    margin-left: 1000px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:visited{
+    color: white;
+}
