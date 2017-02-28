@@ -3,7 +3,18 @@ from models import *
 from django.contrib import messages
 
 def index(request):
-    return render(request, 'comics/index.html')
+    Product.objects.create(
+    name        =   "Superman",
+    description =   "Some dork in a cape",
+    image       =   "guardians1.jpg",
+    price       =   6.20,
+    category    =   "Superhero",
+    quantity    =   42
+    )
+    context = {
+    "products":Product.objects.all()
+    }
+    return render(request, 'comics/index.html', context)
 
 def admin(request):
     return render(request, 'comics/admin.html')
@@ -45,3 +56,12 @@ def product_view(request):
 
 def orders_view(request):
     return render(request, 'comics/admin_orders.html')
+
+def products_main(request):
+    return render(request, 'comics/products_main.html')
+
+def product_spotlight(request):
+    return render(request, 'comics/product_spotlight.html')
+
+def shopping_cart(request):
+    return render(request, 'comics/shopping_cart.html')
